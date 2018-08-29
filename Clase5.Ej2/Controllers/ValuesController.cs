@@ -10,6 +10,14 @@ namespace Clase5.Ej2.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+
+        private readonly IClienteService ClienteService;
+
+        public ValuesController(IClienteService clienteService)
+        {
+            this.ClienteService = clienteService;                
+        }
+        
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
@@ -41,5 +49,6 @@ namespace Clase5.Ej2.Controllers
         public void Delete(int id)
         {
         }
+
     }
 }

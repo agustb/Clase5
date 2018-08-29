@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Clase5.Ej2
 {
-    interface IClienteService
+    public interface IClienteService
     {
         int AltaCliente(Cliente cliente);
         int BajaCliente(Cliente cliente);
@@ -13,8 +13,6 @@ namespace Clase5.Ej2
         int EliminarCliente(int id);
         List<Cliente> BuscarClientes(string nombre);
         Cliente BuscarClientePorId(int id);
-
-        // Esto es una prueba 
 
     }
 }
