@@ -20,34 +20,37 @@ namespace Clase5.Ej2.Controllers
         
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<IEnumerable<string>> Get(string nombre)
         {
-            return new string[] { "value1", "value2" };
+            ClienteService.BuscarClientes(nombre);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
         {
-            return "value";
+            ClienteService.BuscarClientePorId(id);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Cliente cliente)
         {
+            ClienteService.AltaCliente(cliente);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put(int id, [FromBody] Cliente cliente)
         {
+            ClienteService.ModificarCliente(id, cliente);
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            ClienteService.EliminarCliente(id);
         }
 
     }
